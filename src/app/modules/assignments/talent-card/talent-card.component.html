@@ -1,0 +1,26 @@
+<div class="cc-wrapper">
+  <div
+    [ngStyle]="{
+      'background-image':
+        'url(' + baseUrl + '/assets/' + 'Sergio' + '.jpg' + ')'
+    }"
+    class="talent-photo"
+  ></div>
+  <div class="talent-info">
+    <h4>{{ talent.name }}</h4>
+    <h5>{{ talent.skill }}</h5>
+  </div>
+  <div class="talent-score">
+    <mat-icon aria-hidden="false" fontIcon="star"></mat-icon>
+    <span>{{ talent.score }}</span>
+  </div>
+
+  <button
+    routerLink="detail"
+    class="evaluate-btn"
+    mat-flat-button
+    color="accent"
+  >
+    Evaluar
+  </button>
+</div>
