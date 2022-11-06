@@ -1,3 +1,4 @@
+import { TalentListComponent } from './talent-list/talent-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { MainComponent } from './main/main.component';
 import { NgModule } from '@angular/core';
@@ -7,10 +8,14 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-  },
-  {
-    path: 'detail',
-    component: DetailComponent,
+    children: [
+      { path: 'talent', component: TalentListComponent },
+      {
+        path: 'talent/:talentId',
+        component: DetailComponent,
+      },
+      { path: '', redirectTo: 'talent', pathMatch: 'full' },
+    ],
   },
 ];
 

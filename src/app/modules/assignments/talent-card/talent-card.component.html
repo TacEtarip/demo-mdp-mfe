@@ -1,10 +1,9 @@
 <div class="cc-wrapper">
   <div
     [ngStyle]="{
-      'background-image':
-        'url(' + baseUrl + '/assets/' + 'Sergio' + '.jpg' + ')'
+      'background-image': 'url(' + baseUrl + '/assets/' + 'stock' + '.jpg' + ')'
     }"
-    class="talent-photo"
+    class="talent-photo center-photo"
   ></div>
   <div class="talent-info">
     <h4>{{ talent.name }}</h4>
@@ -16,7 +15,7 @@
   </div>
 
   <button
-    routerLink="detail"
+    [routerLink]="[talent.id]"
     class="evaluate-btn"
     mat-flat-button
     color="accent"

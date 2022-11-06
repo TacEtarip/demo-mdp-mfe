@@ -1,1 +1,76 @@
-<p>detail works!</p>
+<mat-toolbar color="primary">
+  <button [routerLink]="['..']" mat-icon-button>
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <span>Regresar</span>
+</mat-toolbar>
+<div *ngIf="talent" class="general-wrapper talent">
+  <div class="profile">
+    <div
+      [ngStyle]="{
+        'background-image':
+          'url(' + baseUrl + '/assets/' + 'stock' + '.jpg' + ')'
+      }"
+      class="talent-photo"
+    ></div>
+    <div class="profile-info">
+      <div class="profile-info-main">
+        <h4>{{ talent.name }}</h4>
+        <h5>{{ talent.skill }}</h5>
+      </div>
+      <div class="profile-info-wt">
+        <h5>Trabajando hace 2 años</h5>
+      </div>
+    </div>
+  </div>
+  <div class="period-search">
+    <mat-form-field appearance="fill">
+      <mat-label>Periodo</mat-label>
+      <mat-select multiple>
+        <mat-option [value]="062022">June 2022</mat-option>
+        <mat-option [value]="072022">July 2022</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="compliment section">
+    <h5>Cumplimiento</h5>
+    <app-start-rating
+      [rating]="rating"
+      [starCount]="starCount"
+      color="primary"
+      (ratingUpdated)="onRatingChanged($event)"
+    ></app-start-rating>
+    <div class="big-text">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        harum aspernatur dolores rerum quibusdam hic consectetur?
+      </p>
+    </div>
+  </div>
+  <div class="description section">
+    <h5>Description</h5>
+    <div class="big-text">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eius
+        ab aperiam fugiat asperiores placeat nemo velit aliquid, alias corporis
+        at suscipit rem sapiente, laborum dicta molestias ducimus! Rem, dicta!
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h5>Skills a mejorar</h5>
+    <div class="skills">
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip color="primary" selected>React</mat-chip>
+        <mat-chip color="accent" selected>Angular</mat-chip>
+        <mat-chip color="primary" selected>Java</mat-chip>
+        <mat-chip color="accent" selected>Nodejs</mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <div class="section action">
+    <button mat-flat-button color="primary">Dame Feedback</button>
+  </div>
+</div>

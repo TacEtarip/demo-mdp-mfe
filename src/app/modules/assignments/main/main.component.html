@@ -1,23 +1,2 @@
 <!-- <button routerLink="detail">test</button> -->
-<!-- <router-outlet></router-outlet> -->
-<div class="as-header">
-  <div class="title">
-    <h1>Personal Asignado</h1>
-  </div>
-  <div class="period-search">
-    <mat-form-field appearance="fill">
-      <mat-label>Periodo</mat-label>
-      <mat-select multiple>
-        <mat-option [value]="062022">June 2022</mat-option>
-        <mat-option [value]="072022">July 2022</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</div>
-
-<div class="talent-showcase">
-  <app-talent-card
-    *ngFor="let talent of talents"
-    [talent]="talent"
-  ></app-talent-card>
-</div>
+<router-outlet></router-outlet>
